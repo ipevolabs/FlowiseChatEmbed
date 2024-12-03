@@ -765,7 +765,30 @@ export const Bot = (botProps: BotProps & { class?: string }) => {
 
     if (uploads && uploads.length > 0) body.uploads = uploads;
 
-    if (props.chatflowConfig) body.overrideConfig = props.chatflowConfig;
+    // if (props.chatflowConfig) body.overrideConfig = props.chatflowConfig;
+    // 建立新的 chatflowConfig 物件，包含當前時間
+    const currentConfig = {
+      ...props.chatflowConfig,
+      vars: {
+        ...(props.chatflowConfig?.vars || {}),
+        currentTime: (() => {
+          const currentDate = new Date();
+          const localDateString = new Date(currentDate.getTime() - currentDate.getTimezoneOffset() * 60000).toISOString();
+
+          // 計算時區偏移
+          const offset = -currentDate.getTimezoneOffset();
+          const hours = Math.floor(Math.abs(offset) / 60)
+            .toString()
+            .padStart(2, '0');
+          const minutes = (Math.abs(offset) % 60).toString().padStart(2, '0');
+          const tzOffset = `${offset >= 0 ? '+' : '-'}${hours}:${minutes}`;
+
+          return localDateString.replace('Z', tzOffset);
+        })(),
+      },
+    };
+
+    body.overrideConfig = currentConfig;
 
     if (leadEmail()) body.leadEmail = leadEmail();
 
