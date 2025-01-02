@@ -60,7 +60,8 @@ To mattleei:ipevolabs/FlowiseChatEmbed.git
 3. 提交程式碼變更
 
    ```bash
-   git add .
+   yarn build
+   git add -u
    git commit -m "feat: #123 實作新功能
 
    * resolved #123
