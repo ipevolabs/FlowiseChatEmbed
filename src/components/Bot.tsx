@@ -766,7 +766,7 @@ export const Bot = (botProps: BotProps & { class?: string }) => {
     if (uploads && uploads.length > 0) body.uploads = uploads;
 
     // if (props.chatflowConfig) body.overrideConfig = props.chatflowConfig;
-    // 建立新的 chatflowConfig 物件，包含當前時間
+    // 建立新的 chatflowConfig 物件，包含當前時間與星期幾
     const currentConfig = {
       ...props.chatflowConfig,
       vars: {
@@ -783,7 +783,11 @@ export const Bot = (botProps: BotProps & { class?: string }) => {
           const minutes = (Math.abs(offset) % 60).toString().padStart(2, '0');
           const tzOffset = `${offset >= 0 ? '+' : '-'}${hours}:${minutes}`;
 
-          return localDateString.replace('Z', tzOffset);
+          // 取得英文的星期幾
+          const weekdays = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+          const dayOfWeek = weekdays[currentDate.getDay()];
+
+          return localDateString.replace('Z', tzOffset) + '  ' + dayOfWeek;
         })(),
       },
     };
