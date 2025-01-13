@@ -95,8 +95,8 @@ To mattleei:ipevolabs/FlowiseChatEmbed.git
    ```bash
    git checkout dev
    git pull origin dev
-   git tag -a v2.0.8.3 -m "版本 2.0.8.3"
-   git push origin v2.0.8.3
+   git tag -a 2.0.8.3 -m "fix: #183 補充 current time 資訊，增加英文星期幾 (#3)"
+   git push origin 2.0.8.3
    ```
 
 3. 更新發布設定
