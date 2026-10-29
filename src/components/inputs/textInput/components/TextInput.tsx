@@ -2,7 +2,7 @@ import { ShortTextInput } from './ShortTextInput';
 import { isMobile } from '@/utils/isMobileSignal';
 import { Show, createSignal, createEffect, onMount, Setter } from 'solid-js';
 import { SendButton } from '@/components/buttons/SendButton';
-import { FileEvent, UploadsConfig } from '@/components/Bot';
+import { FileEvent, FilePreview, UploadsConfig } from '@/components/Bot';
 import { ImageUploadButton } from '@/components/buttons/ImageUploadButton';
 import { RecordAudioButton } from '@/components/buttons/RecordAudioButton';
 import { AttachmentUploadButton } from '@/components/buttons/AttachmentUploadButton';
@@ -20,7 +20,7 @@ type TextInputProps = {
   onInputChange: (value: string) => void;
   uploadsConfig?: Partial<UploadsConfig>;
   isFullFileUpload?: boolean;
-  setPreviews: Setter<unknown[]>;
+  setPreviews: Setter<FilePreview[]>;
   onMicrophoneClicked: () => void;
   handleFileChange: (event: FileEvent<HTMLInputElement>) => void;
   maxChars?: number;

@@ -1,6 +1,5 @@
 import { FeedbackRatingType } from '@/queries/sendMessageQuery';
 import { BotMessageTheme, FooterTheme, TextInputTheme, UserMessageTheme, FeedbackTheme, DisclaimerPopUpTheme, DateTimeToggleTheme } from '@/features/bubble/types';
-import { FilePreview } from '@/components/inputs/textInput/components/FilePreview';
 export type FileEvent<T = EventTarget> = {
     target: T;
 };
@@ -20,7 +19,7 @@ export type UploadsConfig = {
     isRAGFileUploadAllowed: boolean;
 };
 type FilePreviewData = string | ArrayBuffer;
-type FilePreview = {
+export type FilePreview = {
     data: FilePreviewData;
     mime: string;
     name: string;
