@@ -61,7 +61,7 @@ export type UploadsConfig = {
 
 type FilePreviewData = string | ArrayBuffer;
 
-type FilePreview = {
+export type FilePreview = {
   data: FilePreviewData;
   mime: string;
   name: string;

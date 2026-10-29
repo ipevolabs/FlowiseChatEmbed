@@ -44,6 +44,6 @@
   "forwardPorts": [
     5173
   ],
-  "postCreateCommand": "yarn install",
+  "postCreateCommand": "npm install",
   "remoteUser": "node"
 }

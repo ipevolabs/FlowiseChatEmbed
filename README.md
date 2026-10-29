@@ -9,13 +9,13 @@ Javascript library to display flowise chatbot on your website
 Install:
 
 ```bash
-yarn install
+npm install
 ```
 
 Dev:
 
 ```bash
-yarn dev
+npm run dev
 ```
 
 A development server will be running on http://localhost:5678 automatically. Update `public/index.html` to connect directly to Flowise:
@@ -34,7 +34,7 @@ A development server will be running on http://localhost:5678 automatically. Upd
 Build:
 
 ```bash
-yarn build
+npm run build
 ```
 
 ## Embed in your HTML
@@ -241,16 +241,16 @@ agent1=xyz789-uvw456,https://sales.example.com
 helpdesk=ghi123-jkl456,https://help.example.com,https://support.example.com
 ```
 
-2. Install dependencies: (assuming you did not run `yarn install` yet)
+2. Install dependencies: (assuming you did not run `npm install` yet)
 
 ```bash
-yarn install
+npm install
 ```
 
 3. Start proxy server:
 
 ```bash
-yarn start
+npm start
 # Server will be available at:
 # - Local:  http://localhost:3001
 # - Cloud:  [Your Platform URL] (e.g., https://your-app.herokuapp.com)
@@ -295,7 +295,7 @@ When deploying to cloud platforms, you must configure the environment variables 
 2. Start the proxy server:
 
 ```bash
-yarn start
+npm start
 # Server will be available at:
 # - Local:  http://localhost:3001
 ```
@@ -333,7 +333,7 @@ For full page testing, use this configuration instead:
 4. While the proxy server is running, open a new terminal and start the development server:
 
 ```bash
-yarn dev
+npm run dev
 # This will serve the test page on http://localhost:5678 automatically
 ```
 

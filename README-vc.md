@@ -3,7 +3,7 @@
 ## 使用 vscode devcontainer 開發
 
 1. 開啟 vscode 後，進入 Open in Container
-2. 開啟終端機後，請先執行 `yarn dev` 啟動開發環境
+2. 開啟終端機後，請先執行 `npm run dev` 啟動開發環境
 3. 配置 git core editor 為 nano，`git config --global core.editor "nano"`
 4. 在此環境下，進行 git commit 等操作
 5. 在 github UI 上開 PR , squash & merge to dev branch
@@ -60,7 +60,7 @@ To mattleei:ipevolabs/FlowiseChatEmbed.git
 3. 提交程式碼變更
 
    ```bash
-   yarn build
+   npm run build
    git add -u
    git commit -m "feat: #123 實作新功能
 
